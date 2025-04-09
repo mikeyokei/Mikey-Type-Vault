@@ -1,7 +1,7 @@
 /* Font definitions */
 @font-face {
     font-family: 'Otique';
-    src: url('fonts/Otique-Text.otf') format('opentype');
+    src: url('fonts/Otique-text.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -31,44 +31,9 @@ body {
     font-family: 'Otique', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: #AAE0D9;
     color: #000;
-    padding: 0 20px;
+    padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-/* Header styles */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    margin-bottom: 40px;
-}
-
-.brand {
-    font-size: 16px;
-    font-weight: normal;
-}
-
-.menu {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.menu a {
-    color: #000;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: normal;
-}
-
-.menu a.active {
-    font-weight: bold;
-}
-
-.cart-icon {
-    margin-left: 10px;
 }
 
 /* Typeface section styles */
@@ -130,18 +95,6 @@ body {
     border: none;
 }
 
-.buy-btn {
-    background: none;
-    border: none;
-    font-family: 'Otique', sans-serif;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.buy-btn:hover {
-    color: #0FA3B1;
-}
-
 /* Typeface display styles */
 .typeface-display {
     width: 100%;
@@ -152,12 +105,14 @@ body {
 .editable-text {
     width: 100%;
     outline: none;
-    font-size: 120px;
-    line-height: 1;
+    font-size: 72px;
+    line-height: 1.2;
     border: none;
     background: transparent;
-    white-space: nowrap;
+    white-space: normal;
     overflow: visible;
+    padding: 10px 0;
+    text-align: left;
 }
 
 .editable-text.otique {
@@ -172,21 +127,16 @@ body {
     font-family: 'Cheltender', sans-serif;
 }
 
-.editable-text.pixel {
-    font-family: 'Otique', sans-serif; /* Using Otique as fallback until uploaded */
-}
+/* Removed .editable-text.focused styles */
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+    body {
+        padding: 20px 10px;
     }
     
-    .menu {
-        width: 100%;
-        flex-wrap: wrap;
+    .typeface-section {
+        margin-bottom: 40px;
     }
     
     .typeface-controls {
@@ -205,11 +155,18 @@ body {
         padding: 0;
     }
     
-    .buy-btn {
-        align-self: flex-end;
+    .editable-text {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .weight-options {
+        flex-direction: column;
+        gap: 5px;
     }
     
     .editable-text {
-        font-size: 72px;
+        font-size: 36px;
     }
 }
