@@ -1,7 +1,7 @@
 /* Font definitions */
 @font-face {
     font-family: 'Otique';
-    src: url('fonts/Otique-Text.otf') format('opentype');
+    src: url('fonts/Otique-text.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -28,24 +28,12 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Otique', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: #AAE0D9;
     color: #000;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Main container */
-.type-tester {
-    width: 100%;
-    max-width: 900px;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    margin: 20px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Header styles */
@@ -53,128 +41,175 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    margin-bottom: 40px;
 }
 
 .brand {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: normal;
 }
 
-.controls {
+.menu {
     display: flex;
-    gap: 16px;
-}
-
-/* Dropdown and button styles */
-select {
-    padding: 8px 12px;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    background-color: white;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.weight-btn {
-    padding: 8px 12px;
-    background-color: #0FA3B1;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-/* Text container */
-.text-container {
-    padding: 40px;
-    background-color: white;
-    min-height: 300px;
-}
-
-#editable-text {
-    width: 100%;
-    outline: none;
-    font-family: 'Otique', sans-serif;
-    font-size: 72px;
-    line-height: 1.2;
-    letter-spacing: 0;
-    word-wrap: break-word;
-}
-
-/* Controls panel */
-.controls-panel {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
     gap: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    align-items: center;
 }
 
-.control-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-width: 120px;
-    flex: 1;
+.menu a {
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: normal;
 }
 
-label {
-    font-size: 12px;
-    color: #666;
+.menu a.active {
+    font-weight: bold;
 }
 
-input[type="range"] {
-    width: 100%;
-    cursor: pointer;
+.cart-icon {
+    margin-left: 10px;
 }
 
-.alignment-controls {
-    display: flex;
-    gap: 2px;
+/* Typeface section styles */
+.typeface-section {
+    margin-bottom: 60px;
 }
 
-.align-btn {
-    background: none;
-    border: 1px solid #eee;
-    width: 40px;
-    height: 40px;
+.typeface-controls {
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #666;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-.align-btn.active {
-    background-color: #0FA3B1;
-    color: white;
-    border-color: #0FA3B1;
+.weight-options {
+    display: flex;
+    gap: 20px;
+}
+
+.weight-option {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.weight-option.active {
+    font-weight: bold;
+}
+
+.slider-container {
+    flex-grow: 1;
+    padding: 0 40px;
+}
+
+.weight-slider {
+    width: 100%;
+    height: 2px;
+    background: #ddd;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+.weight-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0FA3B1;
+    cursor: pointer;
+}
+
+.weight-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0FA3B1;
+    cursor: pointer;
+    border: none;
+}
+
+.buy-btn {
+    background: none;
+    border: none;
+    font-family: 'Otique', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.buy-btn:hover {
+    color: #0FA3B1;
+}
+
+/* Typeface display styles */
+.typeface-display {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px 0;
+}
+
+.editable-text {
+    width: 100%;
+    outline: none;
+    font-size: 120px;
+    line-height: 1;
+    border: none;
+    background: transparent;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.editable-text.otique {
+    font-family: 'Otique', sans-serif;
+}
+
+.editable-text.sooper {
+    font-family: 'Sooper', sans-serif;
+}
+
+.editable-text.cheltender {
+    font-family: 'Cheltender', sans-serif;
+}
+
+.editable-text.pixel {
+    font-family: 'Otique', sans-serif; /* Using Otique as fallback until uploaded */
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 16px;
+        gap: 20px;
     }
     
-    .controls {
+    .menu {
         width: 100%;
+        flex-wrap: wrap;
     }
     
-    .font-selector, .weight-selector {
-        width: 100%;
-    }
-    
-    select, .weight-btn {
-        width: 100%;
-    }
-    
-    .controls-panel {
+    .typeface-controls {
         flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .weight-options {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .slider-container {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .buy-btn {
+        align-self: flex-end;
+    }
+    
+    .editable-text {
+        font-size: 72px;
     }
 }
