@@ -3,72 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Type Tester</title>
+    <title>Type Tester</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="type-tester">
-        <div class="header">
-            <div class="brand">Type Tester</div>
-            <div class="controls">
-                <div class="font-selector">
-                    <select id="font-family">
-                        <option value="Otique">Otique Text</option>
-                        <option value="Sooper">Sooper Regular</option>
-                        <option value="Cheltender">Cheltender Regular</option>
-                        <option value="Pixel">Vectrex</option>
-                    </select>
-                </div>
-                <div class="weight-selector">
-                    <button class="weight-btn" data-weight="regular">Regular</button>
-                </div>
-            </div>
+    <div class="header">
+        <div class="brand">Razzia Type</div>
+        <div class="menu">
+            <a href="#" class="active">Typefaces</a>
+            <a href="#">Free trials</a>
+            <a href="#">Information</a>
+            <a href="#">Licenses</a>
+            <a href="#" class="cart-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3H5L5.4 5M5.4 5H21L17 13H7M5.4 5L7 13M7 13L5.2 17H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
         </div>
-        
-        <div class="text-container">
-            <div id="editable-text" contenteditable="true">
+    </div>
+    
+    <!-- First typeface section -->
+    <div class="typeface-section">
+        <div class="typeface-controls">
+            <div class="weight-options">
+                <span class="weight-option active">▼ RT Atlas Rough</span>
+                <span class="weight-option">▽ Light</span>
+            </div>
+            <div class="slider-container">
+                <input type="range" min="0" max="100" value="50" class="weight-slider">
+            </div>
+            <button class="buy-btn">BUY</button>
+        </div>
+        <div class="typeface-display">
+            <div class="editable-text otique" contenteditable="true">
                 Arcade Mania
             </div>
         </div>
-        
-        <div class="controls-panel">
-            <div class="control-group">
-                <label for="font-size">Size</label>
-                <input type="range" id="font-size" min="12" max="200" value="72">
-                <span id="size-value">72px</span>
+    </div>
+    
+    <!-- Second typeface section -->
+    <div class="typeface-section">
+        <div class="typeface-controls">
+            <div class="weight-options">
+                <span class="weight-option active">▼ RT Atlas Rough</span>
+                <span class="weight-option">▽ Light Oblique</span>
             </div>
-            
-            <div class="control-group">
-                <label for="line-height">Line Height</label>
-                <input type="range" id="line-height" min="0.8" max="2" value="1.2" step="0.1">
-                <span id="line-height-value">1.2</span>
+            <div class="slider-container">
+                <input type="range" min="0" max="100" value="50" class="weight-slider">
             </div>
-            
-            <div class="control-group">
-                <label for="letter-spacing">Letter Spacing</label>
-                <input type="range" id="letter-spacing" min="-0.05" max="0.5" value="0" step="0.01">
-                <span id="letter-spacing-value">0</span>
-            </div>
-            
-            <div class="alignment-controls">
-                <button id="align-left" class="align-btn active">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 5H21M3 12H15M3 19H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-                <button id="align-center" class="align-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 5H21M7 12H17M7 19H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-                <button id="align-right" class="align-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 5H21M9 12H21M9 19H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
+            <button class="buy-btn">BUY</button>
+        </div>
+        <div class="typeface-display">
+            <div class="editable-text sooper" contenteditable="true">
+                Genesis
             </div>
         </div>
     </div>
+    
+    <!-- Third typeface section -->
+    <div class="typeface-section">
+        <div class="typeface-controls">
+            <div class="weight-options">
+                <span class="weight-option active">▼ RT Atlas Rough</span>
+                <span class="weight-option">▽ Regular</span>
+            </div>
+            <div class="slider-container">
+                <input type="range" min="0" max="100" value="50" class="weight-slider">
+            </div>
+            <button class="buy-btn">BUY</button>
+        </div>
+        <div class="typeface-display">
+            <div class="editable-text cheltender" contenteditable="true">
+                Coleco Vision
+            </div>
+        </div>
+    </div>
+    
+    <!-- Fourth typeface section -->
+    <div class="typeface-section">
+        <div class="typeface-controls">
+            <div class="weight-options">
+                <span class="weight-option active">▼ RT Atlas Rough</span>
+                <span class="weight-option">▽ Regular Oblique</span>
+            </div>
+            <div class="slider-container">
+                <input type="range" min="0" max="100" value="50" class="weight-slider">
+            </div>
+            <button class="buy-btn">BUY</button>
+        </div>
+        <div class="typeface-display">
+            <div class="editable-text pixel" contenteditable="true">
+                Vectrex
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
