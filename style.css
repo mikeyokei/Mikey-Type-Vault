@@ -113,6 +113,7 @@ body {
     overflow: visible;
     padding: 10px 0;
     text-align: left;
+    color: #0FA3B1; /* Changed text color to #0FA3B1 */
 }
 
 .editable-text.otique {
