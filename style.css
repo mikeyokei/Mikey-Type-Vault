@@ -1,3 +1,26 @@
+/* Font definitions */
+@font-face {
+    font-family: 'Otique';
+    src: url('fonts/Otique-text.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sooper';
+    src: url('fonts/Sooper-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cheltender';
+    src: url('fonts/Cheltender-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,78 +28,153 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #AAE0D9;
+    color: #000;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.type-tester-container {
+/* Main container */
+.type-tester {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 20px;
+    max-width: 900px;
+    background-color: #fff;
     border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 20px;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.brand {
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .controls {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+    display: flex;
+    gap: 16px;
+}
+
+/* Dropdown and button styles */
+select {
+    padding: 8px 12px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.weight-btn {
+    padding: 8px 12px;
+    background-color: #0FA3B1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Text container */
+.text-container {
+    padding: 40px;
+    background-color: white;
+    min-height: 300px;
+}
+
+#editable-text {
+    width: 100%;
+    outline: none;
+    font-family: 'Otique', sans-serif;
+    font-size: 72px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    word-wrap: break-word;
+}
+
+/* Controls panel */
+.controls-panel {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .control-group {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
+    min-width: 120px;
+    flex: 1;
 }
 
 label {
-    font-size: 14px;
-    font-weight: 500;
-    color: #555;
+    font-size: 12px;
+    color: #666;
 }
 
-select, input[type="range"], input[type="color"] {
+input[type="range"] {
     width: 100%;
-    padding: 6px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-}
-
-input[type="color"] {
-    height: 36px;
     cursor: pointer;
 }
 
-.text-area-container {
-    width: 100%;
-    min-height: 200px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 20px;
-    background-color: #fff;
-    overflow-wrap: break-word;
+.alignment-controls {
+    display: flex;
+    gap: 2px;
 }
 
-#test-text {
-    width: 100%;
-    min-height: 160px;
-    outline: none;
-    font-size: 36px;
-    line-height: 1.5;
-    font-family: Arial, sans-serif;
-    font-weight: 400;
-    letter-spacing: 0;
-    color: #000;
+.align-btn {
+    background: none;
+    border: 1px solid #eee;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #666;
+}
+
+.align-btn.active {
+    background-color: #0FA3B1;
+    color: white;
+    border-color: #0FA3B1;
 }
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
     .controls {
-        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    
+    .font-selector, .weight-selector {
+        width: 100%;
+    }
+    
+    select, .weight-btn {
+        width: 100%;
+    }
+    
+    .controls-panel {
+        flex-direction: column;
     }
 }
