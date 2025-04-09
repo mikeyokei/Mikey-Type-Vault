@@ -1,47 +1,81 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Get all UI elements
-    const fontSelector = document.getElementById("font-selector");
-    const fontSizeSlider = document.getElementById("font-size");
-    const lineHeightSlider = document.getElementById("line-height");
-    const letterSpacingSlider = document.getElementById("letter-spacing");
-    const fontWeightSlider = document.getElementById("font-weight");
-    const fontColorPicker = document.getElementById("font-color");
-    const bgColorPicker = document.getElementById("bg-color");
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all the editable texts
+    const editableTexts = document.querySelectorAll('.editable-text');
     
-    const sizeValue = document.getElementById("size-value");
-    const lineHeightValue = document.getElementById("line-height-value");
-    const letterSpacingValue = document.getElementById("letter-spacing-value");
-    const weightValue = document.getElementById("weight-value");
+    // Get all the weight sliders
+    const weightSliders = document.querySelectorAll('.weight-slider');
     
-    const testText = document.getElementById("test-text");
-    const textAreaContainer = document.querySelector(".text-area-container");
+    // Get all weight option tabs
+    const weightOptions = document.querySelectorAll('.weight-option');
     
-    // Update the text when controls change
-    function updateTextStyle() {
-        testText.style.fontFamily = fontSelector.value;
-        testText.style.fontSize = `${fontSizeSlider.value}px`;
-        testText.style.lineHeight = lineHeightSlider.value;
-        testText.style.letterSpacing = `${letterSpacingSlider.value}em`;
-        testText.style.fontWeight = fontWeightSlider.value;
-        testText.style.color = fontColorPicker.value;
-        textAreaContainer.style.backgroundColor = bgColorPicker.value;
+    // Get all buy buttons
+    const buyButtons = document.querySelectorAll('.buy-btn');
+    
+    // Make the texts focusable
+    editableTexts.forEach(text => {
+        // Focus handling
+        text.addEventListener('focus', function() {
+            this.classList.add('focused');
+        });
         
-        // Update display values
-        sizeValue.textContent = `${fontSizeSlider.value}px`;
-        lineHeightValue.textContent = lineHeightSlider.value;
-        letterSpacingValue.textContent = `${letterSpacingSlider.value}em`;
-        weightValue.textContent = fontWeightSlider.value;
-    }
+        text.addEventListener('blur', function() {
+            this.classList.remove('focused');
+        });
+        
+        // Make sure entire text is selected on click for easy replacement
+        text.addEventListener('click', function() {
+            // Create a range and select all text
+            const range = document.createRange();
+            range.selectNodeContents(this);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+        });
+    });
     
-    // Add event listeners to all controls
-    fontSelector.addEventListener("change", updateTextStyle);
-    fontSizeSlider.addEventListener("input", updateTextStyle);
-    lineHeightSlider.addEventListener("input", updateTextStyle);
-    letterSpacingSlider.addEventListener("input", updateTextStyle);
-    fontWeightSlider.addEventListener("input", updateTextStyle);
-    fontColorPicker.addEventListener("input", updateTextStyle);
-    bgColorPicker.addEventListener("input", updateTextStyle);
+    // Handle slider changes
+    weightSliders.forEach((slider, index) => {
+        slider.addEventListener('input', function() {
+            // Map slider value (0-100) to font size (60-180px)
+            const fontSize = 60 + (this.value * 1.2);
+            
+            // Update corresponding text element
+            const textElement = editableTexts[index];
+            textElement.style.fontSize = `${fontSize}px`;
+        });
+    });
     
-    // Initial render
-    updateTextStyle();
+    // Handle weight option toggles
+    weightOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            // Find the parent section first
+            const parentSection = this.closest('.typeface-section');
+            
+            // Toggle active class within this section only
+            const siblings = parentSection.querySelectorAll('.weight-option');
+            siblings.forEach(sibling => {
+                sibling.classList.remove('active');
+            });
+            
+            this.classList.add('active');
+            
+            // Toggle indicator
+            if (this.textContent.includes('▼')) {
+                this.textContent = this.textContent.replace('▼', '▽');
+            } else if (this.textContent.includes('▽')) {
+                this.textContent = this.textContent.replace('▽', '▼');
+            }
+        });
+    });
+    
+    // Add hover effect to buy buttons
+    buyButtons.forEach(button => {
+        button.addEventListener('mouseover', function() {
+            this.style.color = '#0FA3B1';
+        });
+        
+        button.addEventListener('mouseout', function() {
+            this.style.color = '';
+        });
+    });
 });
