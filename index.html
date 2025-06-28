@@ -3,63 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Type Tester</title>
+    <title>Mikey Type Foundry</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- First typeface section: Otique -->
-    <div class="typeface-section">
-        <div class="typeface-controls">
-            <div class="weight-options">
-                <span class="weight-option active">▼ Otique</span>
-                <span class="weight-option">▽ Text</span>
-            </div>
-            <div class="slider-container">
-                <input type="range" min="0" max="100" value="50" class="weight-slider">
-            </div>
-        </div>
-        <div class="typeface-display">
-            <div class="editable-text otique" contenteditable="true">
-                Otique Text
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">mikey.foundry</div>
+            <div class="nav-links">
+                <a href="#fonts" class="nav-link">typefaces</a>
+                <a href="#about" class="nav-link">about</a>
+                <a href="#contact" class="nav-link">contact</a>
+                <button class="nav-cta">get fonts</button>
             </div>
         </div>
-    </div>
-    
-    <!-- Second typeface section: Sooper -->
-    <div class="typeface-section">
-        <div class="typeface-controls">
-            <div class="weight-options">
-                <span class="weight-option active">▼ Sooper</span>
-                <span class="weight-option">▽ Regular</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">digital type foundry</div>
+                <h1 class="hero-title">
+                    crafting fonts<br>
+                    for the digital age
+                </h1>
+                <p class="hero-description">
+                    Premium typefaces designed with precision and care. 
+                    Each font tells a story, each character has purpose.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">font families</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">48</div>
+                        <div class="stat-label">total weights</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">possibilities</div>
+                    </div>
+                </div>
             </div>
-            <div class="slider-container">
-                <input type="range" min="0" max="100" value="50" class="weight-slider">
+            <div class="hero-visual">
+                <div class="folder-stack">
+                    <div class="folder folder-1">
+                        <div class="folder-tab">Otique</div>
+                        <div class="folder-content">
+                            <div class="paper-sheet">
+                                <div class="paper-text otique-demo">Aa</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="folder folder-2">
+                        <div class="folder-tab">Sooper</div>
+                        <div class="folder-content">
+                            <div class="paper-sheet">
+                                <div class="paper-text sooper-demo">Bb</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="folder folder-3">
+                        <div class="folder-tab">Cheltender</div>
+                        <div class="folder-content">
+                            <div class="paper-sheet">
+                                <div class="paper-text cheltender-demo">Cc</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="typeface-display">
-            <div class="editable-text sooper" contenteditable="true">
-                Sooper Regular
+    </section>
+
+    <!-- Font Showcase -->
+    <section id="fonts" class="fonts-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">our typefaces</h2>
+                <p class="section-subtitle">explore our collection of carefully crafted fonts</p>
+            </div>
+            
+            <div class="font-grid">
+                <!-- Otique Font Card -->
+                <div class="font-card" data-font="otique">
+                    <div class="font-card-header">
+                        <div class="font-name">Otique</div>
+                        <div class="font-status">available</div>
+                    </div>
+                    <div class="font-preview">
+                        <div class="font-display otique-font">
+                            The quick brown fox jumps over the lazy dog
+                        </div>
+                    </div>
+                    <div class="font-details">
+                        <div class="font-info">
+                            <span class="info-label">weights:</span>
+                            <span class="info-value">1</span>
+                        </div>
+                        <div class="font-info">
+                            <span class="info-label">styles:</span>
+                            <span class="info-value">text</span>
+                        </div>
+                        <button class="font-cta">view details</button>
+                    </div>
+                </div>
+
+                <!-- Sooper Font Card -->
+                <div class="font-card" data-font="sooper">
+                    <div class="font-card-header">
+                        <div class="font-name">Sooper</div>
+                        <div class="font-status">available</div>
+                    </div>
+                    <div class="font-preview">
+                        <div class="font-display sooper-font">
+                            The quick brown fox jumps over the lazy dog
+                        </div>
+                    </div>
+                    <div class="font-details">
+                        <div class="font-info">
+                            <span class="info-label">weights:</span>
+                            <span class="info-value">1</span>
+                        </div>
+                        <div class="font-info">
+                            <span class="info-label">styles:</span>
+                            <span class="info-value">regular</span>
+                        </div>
+                        <button class="font-cta">view details</button>
+                    </div>
+                </div>
+
+                <!-- Cheltender Font Card -->
+                <div class="font-card" data-font="cheltender">
+                    <div class="font-card-header">
+                        <div class="font-name">Cheltender</div>
+                        <div class="font-status">available</div>
+                    </div>
+                    <div class="font-preview">
+                        <div class="font-display cheltender-font">
+                            The quick brown fox jumps over the lazy dog
+                        </div>
+                    </div>
+                    <div class="font-details">
+                        <div class="font-info">
+                            <span class="info-label">weights:</span>
+                            <span class="info-value">1</span>
+                        </div>
+                        <div class="font-info">
+                            <span class="info-label">styles:</span>
+                            <span class="info-value">regular</span>
+                        </div>
+                        <button class="font-cta">view details</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <!-- Third typeface section: Cheltender -->
-    <div class="typeface-section">
-        <div class="typeface-controls">
-            <div class="weight-options">
-                <span class="weight-option active">▼ Cheltender</span>
-                <span class="weight-option">▽ Regular</span>
+    </section>
+
+    <!-- Type Tester Section -->
+    <section class="type-tester">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">test drive</h2>
+                <p class="section-subtitle">try our fonts with your own text</p>
             </div>
-            <div class="slider-container">
-                <input type="range" min="0" max="100" value="50" class="weight-slider">
+            
+            <div class="tester-interface">
+                <div class="tester-controls">
+                    <div class="control-group">
+                        <label class="control-label">font family</label>
+                        <select class="font-selector" id="fontSelector">
+                            <option value="otique">Otique</option>
+                            <option value="sooper">Sooper</option>
+                            <option value="cheltender">Cheltender</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">size</label>
+                        <input type="range" class="size-slider" id="sizeSlider" min="24" max="120" value="72">
+                        <span class="size-value" id="sizeValue">72px</span>
+                    </div>
+                </div>
+                
+                <div class="tester-display">
+                    <div class="paper-background">
+                        <div class="editable-preview otique-font" contenteditable="true" id="previewText">
+                            Type something beautiful
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="typeface-display">
-            <div class="editable-text cheltender" contenteditable="true">
-                Cheltender Regular
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">about the foundry</h2>
+                    <p class="about-description">
+                        We believe typography is the voice of design. Each typeface we create 
+                        is meticulously crafted to serve both form and function, bridging the 
+                        gap between traditional craftsmanship and digital innovation.
+                    </p>
+                    <p class="about-description">
+                        Our fonts are designed for the modern world – optimized for screens, 
+                        readable at any size, and versatile enough for any project.
+                    </p>
+                </div>
+                <div class="about-visual">
+                    <div class="design-process">
+                        <div class="process-step">
+                            <div class="step-icon">✏️</div>
+                            <div class="step-title">sketch</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon">⚡</div>
+                            <div class="step-title">digitize</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon">🔧</div>
+                            <div class="step-title">refine</div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon">🚀</div>
+                            <div class="step-title">release</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">get in touch</h2>
+                    <p class="contact-description">
+                        Ready to elevate your project with premium typography? 
+                        Let's discuss licensing, custom work, or collaborations.
+                    </p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <span class="method-label">email:</span>
+                            <span class="method-value">hello@mikeyfoundry.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <span class="method-label">licensing:</span>
+                            <span class="method-value">fonts@mikeyfoundry.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form class="form">
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="your name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="your email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-textarea" placeholder="your message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">send message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">mikey.foundry</div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">terms</a>
+                    <a href="#" class="footer-link">privacy</a>
+                    <a href="#" class="footer-link">licenses</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mikey Type Foundry. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
