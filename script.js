@@ -1,23 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Navigation functionality
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const target = this.dataset.target;
-            const section = document.getElementById(target);
-            if (section) {
-                section.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
     // Type tester functionality
-    const fontSelector = document.getElementById('fontSelector');
+    const fontSelector = document.getElementById('fontSelect');
     const sizeSlider = document.getElementById('sizeSlider');
-    const sizeValue = document.getElementById('sizeValue');
+    const sizeDisplay = document.getElementById('sizeDisplay');
     const previewText = document.getElementById('previewText');
     
     // Font class mapping
@@ -45,229 +30,106 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Update font size
-    if (sizeSlider && sizeValue && previewText) {
+    if (sizeSlider && sizeDisplay && previewText) {
         sizeSlider.addEventListener('input', function() {
             const size = this.value;
-            sizeValue.textContent = size + 'PX';
+            sizeDisplay.textContent = size + 'px';
             previewText.style.fontSize = size + 'px';
         });
     }
     
-    // Font entry interactions
-    const fontEntries = document.querySelectorAll('.font-entry');
-    fontEntries.forEach(entry => {
-        entry.addEventListener('click', function() {
-            const fontType = this.dataset.font;
+    // Example sentence interactions
+    const exampleSentences = document.querySelectorAll('.example-sentence');
+    exampleSentences.forEach(sentence => {
+        sentence.addEventListener('click', function() {
+            const text = this.dataset.text;
+            const fontClass = this.classList[1]; // Get the font class
             
-            // Update type tester with clicked font
-            if (fontSelector && fontType) {
-                fontSelector.value = fontType;
+            // Update preview text
+            if (previewText && text) {
+                previewText.textContent = text;
                 
-                // Trigger change event to update preview
-                const changeEvent = new Event('change');
-                fontSelector.dispatchEvent(changeEvent);
-                
-                // Scroll to type tester
-                const typeTester = document.querySelector('.type-tester');
-                if (typeTester) {
-                    typeTester.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
-    });
-    
-    // Folder tab functionality
-    const folderTabs = document.querySelectorAll('.folder-tab');
-    const typeSpecimen = document.querySelector('.type-specimen');
-    
-    folderTabs.forEach((tab, index) => {
-        tab.addEventListener('click', function() {
-            // Remove active class from all tabs
-            folderTabs.forEach(t => t.classList.remove('active'));
-            
-            // Add active class to clicked tab
-            this.classList.add('active');
-            
-            // Update specimen based on tab
-            const fonts = ['otique-font', 'sooper-font', 'cheltender-font'];
-            const letters = ['Aa Bb Cc', 'Dd Ee Ff', 'Gg Hh Ii'];
-            
-            if (typeSpecimen) {
-                // Remove all font classes
-                fonts.forEach(font => typeSpecimen.classList.remove(font));
-                
-                // Add new font class and update text
-                typeSpecimen.classList.add(fonts[index]);
-                typeSpecimen.textContent = letters[index];
-            }
-        });
-    });
-    
-    // Form submission
-    const contactForm = document.querySelector('.brutal-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simple form validation and submission feedback
-            const inputs = this.querySelectorAll('input, textarea');
-            let isValid = true;
-            
-            inputs.forEach(input => {
-                if (input.hasAttribute('required') && !input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = '#ff0000';
-                    input.style.background = '#ffcccc';
-                } else {
-                    input.style.borderColor = '#000';
-                    input.style.background = '#fff';
-                }
-            });
-            
-            if (isValid) {
-                const submitBtn = this.querySelector('.form-submit');
-                const originalText = submitBtn.textContent;
-                
-                submitBtn.textContent = 'SENDING...';
-                submitBtn.disabled = true;
-                
-                // Simulate form submission
-                setTimeout(() => {
-                    submitBtn.textContent = 'MESSAGE SENT!';
-                    submitBtn.style.background = '#00ff00';
-                    submitBtn.style.color = '#000';
+                // Update font selector to match
+                const fontType = fontClass.replace('-font', '');
+                if (fontSelector) {
+                    fontSelector.value = fontType;
                     
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.style.background = '#000';
-                        submitBtn.style.color = '#fff';
-                        submitBtn.disabled = false;
-                        this.reset();
-                    }, 2000);
-                }, 1000);
-            }
-        });
-    }
-    
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0) translateX(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for scroll animations
-    const animatedElements = document.querySelectorAll('.font-entry, .info-block, .process-step');
-    animatedElements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-        observer.observe(el);
-    });
-    
-    // Navigation background and behavior on scroll
-    const nav = document.querySelector('.nav');
-    let lastScrollY = window.scrollY;
-    
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        
-        // Hide/show nav on scroll
-        if (currentScrollY > lastScrollY && currentScrollY > 200) {
-            nav.style.transform = 'translateY(-100%)';
-        } else {
-            nav.style.transform = 'translateY(0)';
-        }
-        
-        lastScrollY = currentScrollY;
-    });
-    
-    // Terminal-style typing effect for preview text
-    let typingTimer;
-    if (previewText) {
-        previewText.addEventListener('input', function() {
-            clearTimeout(typingTimer);
-            this.style.borderRight = '3px solid #00ff00';
-            
-            typingTimer = setTimeout(() => {
-                this.style.borderRight = 'none';
-            }, 1000);
-        });
-    }
-    
-    // Random glitch effect for terminal status
-    const terminalStatus = document.querySelector('.terminal-status');
-    if (terminalStatus) {
-        setInterval(() => {
-            if (Math.random() < 0.1) { // 10% chance
-                const originalText = terminalStatus.textContent;
-                terminalStatus.textContent = 'ERROR';
-                terminalStatus.style.background = '#ff0000';
+                    // Remove all font classes and add the correct one
+                    Object.values(fontClasses).forEach(className => {
+                        previewText.classList.remove(className);
+                    });
+                    previewText.classList.add(fontClass);
+                }
                 
-                setTimeout(() => {
-                    terminalStatus.textContent = originalText;
-                    terminalStatus.style.background = '#00ff00';
-                }, 200);
-            }
-        }, 3000);
-    }
-    
-    // Process step hover effects
-    const processSteps = document.querySelectorAll('.process-step');
-    processSteps.forEach((step, index) => {
-        step.addEventListener('mouseenter', function() {
-            // Add stagger effect
-            setTimeout(() => {
-                this.style.transform = 'scale(1.05) rotate(2deg)';
-            }, index * 50);
-        });
-        
-        step.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1) rotate(0deg)';
-        });
-    });
-    
-    // Add cursor trail effect
-    let mouseTrail = [];
-    document.addEventListener('mousemove', function(e) {
-        mouseTrail.push({x: e.clientX, y: e.clientY, time: Date.now()});
-        
-        // Keep only recent positions
-        mouseTrail = mouseTrail.filter(pos => Date.now() - pos.time < 500);
-    });
-    
-    // Keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-        // Press 'T' to focus on type tester
-        if (e.key.toLowerCase() === 't' && !e.target.matches('input, textarea')) {
-            e.preventDefault();
-            const typeTester = document.querySelector('.type-tester');
-            if (typeTester) {
-                typeTester.scrollIntoView({ behavior: 'smooth' });
+                // Scroll to preview area
+                previewText.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                
+                // Focus on preview text for editing
                 setTimeout(() => {
                     previewText.focus();
                 }, 500);
             }
-        }
-        
-        // Press 'F' to go to fonts section
-        if (e.key.toLowerCase() === 'f' && !e.target.matches('input, textarea')) {
+        });
+    });
+    
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+        // Press 'R' to reset preview text
+        if (e.key.toLowerCase() === 'r' && !e.target.matches('input, textarea, [contenteditable]')) {
             e.preventDefault();
-            const fontsSection = document.getElementById('fonts');
-            if (fontsSection) {
-                fontsSection.scrollIntoView({ behavior: 'smooth' });
+            if (previewText) {
+                previewText.textContent = 'The quick brown fox jumps over the lazy dog';
+                previewText.focus();
             }
         }
+        
+        // Press '1', '2', '3' to switch fonts
+        if (['1', '2', '3'].includes(e.key) && !e.target.matches('input, textarea, [contenteditable]')) {
+            e.preventDefault();
+            const fontOptions = ['otique', 'sooper', 'cheltender'];
+            const selectedFont = fontOptions[parseInt(e.key) - 1];
+            
+            if (fontSelector && selectedFont) {
+                fontSelector.value = selectedFont;
+                
+                // Trigger change event
+                const changeEvent = new Event('change');
+                fontSelector.dispatchEvent(changeEvent);
+            }
+        }
+    });
+    
+    // Auto-focus preview text on load
+    if (previewText) {
+        setTimeout(() => {
+            previewText.focus();
+        }, 100);
+    }
+    
+    // Smooth scrolling for better UX
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    // Simple fade-in animation for content
+    const animatedElements = document.querySelectorAll('.example-group, .preview-area');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    animatedElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(el);
     });
 });
