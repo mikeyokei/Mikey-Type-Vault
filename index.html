@@ -3,74 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mikey Type Foundry</title>
+    <title>MIKEY.FOUNDRY</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <div class="nav-brand">mikey.foundry</div>
-            <div class="nav-links">
-                <a href="#fonts" class="nav-link">typefaces</a>
-                <a href="#about" class="nav-link">about</a>
-                <a href="#contact" class="nav-link">contact</a>
-                <button class="nav-cta">get fonts</button>
+            <div class="nav-brand">MIKEY.FOUNDRY</div>
+            <div class="nav-menu">
+                <div class="nav-item" data-target="fonts">FONTS</div>
+                <div class="nav-item" data-target="about">INFO</div>
+                <div class="nav-item" data-target="contact">CONTACT</div>
+                <div class="nav-cta">GET FONTS</div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">digital type foundry</div>
+        <div class="hero-grid">
+            <div class="hero-main">
+                <div class="hero-label">DIGITAL TYPE FOUNDRY</div>
                 <h1 class="hero-title">
-                    crafting fonts<br>
-                    for the digital age
+                    <span class="title-line">CRAFTING</span>
+                    <span class="title-line">FONTS FOR</span>
+                    <span class="title-line highlight">THE FUTURE</span>
                 </h1>
-                <p class="hero-description">
-                    Premium typefaces designed with precision and care. 
-                    Each font tells a story, each character has purpose.
-                </p>
                 <div class="hero-stats">
-                    <div class="stat-item">
+                    <div class="stat-block">
                         <div class="stat-number">12</div>
-                        <div class="stat-label">font families</div>
+                        <div class="stat-label">FAMILIES</div>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-block">
                         <div class="stat-number">48</div>
-                        <div class="stat-label">total weights</div>
+                        <div class="stat-label">WEIGHTS</div>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-block">
                         <div class="stat-number">∞</div>
-                        <div class="stat-label">possibilities</div>
+                        <div class="stat-label">POSSIBILITIES</div>
                     </div>
                 </div>
             </div>
+            
             <div class="hero-visual">
-                <div class="folder-stack">
-                    <div class="folder folder-1">
-                        <div class="folder-tab">Otique</div>
-                        <div class="folder-content">
-                            <div class="paper-sheet">
-                                <div class="paper-text otique-demo">Aa</div>
-                            </div>
-                        </div>
+                <div class="file-system">
+                    <div class="folder-container">
+                        <div class="folder-tab active">OTIQUE</div>
+                        <div class="folder-tab">SOOPER</div>
+                        <div class="folder-tab">CHELTENDER</div>
                     </div>
-                    <div class="folder folder-2">
-                        <div class="folder-tab">Sooper</div>
-                        <div class="folder-content">
-                            <div class="paper-sheet">
-                                <div class="paper-text sooper-demo">Bb</div>
-                            </div>
+                    <div class="file-viewer">
+                        <div class="file-header">
+                            <span class="file-name">otique-specimen.txt</span>
+                            <span class="file-size">2.4KB</span>
                         </div>
-                    </div>
-                    <div class="folder folder-3">
-                        <div class="folder-tab">Cheltender</div>
-                        <div class="folder-content">
-                            <div class="paper-sheet">
-                                <div class="paper-text cheltender-demo">Cc</div>
+                        <div class="file-content">
+                            <div class="type-specimen otique-font">Aa Bb Cc</div>
+                            <div class="ascii-art">
+                                ████████╗██╗   ██╗██████╗ ███████╗
+                                ╚══██╔══╝╚██╗ ██╔╝██╔══██╗██╔════╝
+                                   ██║    ╚████╔╝ ██████╔╝█████╗  
+                                   ██║     ╚██╔╝  ██╔═══╝ ██╔══╝  
+                                   ██║      ██║   ██║     ███████╗
+                                   ╚═╝      ╚═╝   ╚═╝     ╚══════╝
                             </div>
                         </div>
                     </div>
@@ -79,119 +75,112 @@
         </div>
     </section>
 
-    <!-- Font Showcase -->
+    <!-- Font Grid -->
     <section id="fonts" class="fonts-section">
-        <div class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">our typefaces</h2>
-                <p class="section-subtitle">explore our collection of carefully crafted fonts</p>
+        <div class="section-header">
+            <h2 class="section-title">TYPEFACE ARCHIVE</h2>
+            <div class="archive-counter">003 FAMILIES LOADED</div>
+        </div>
+        
+        <div class="font-archive">
+            <div class="font-entry" data-font="otique">
+                <div class="entry-number">001</div>
+                <div class="entry-content">
+                    <div class="entry-header">
+                        <h3 class="font-name">OTIQUE</h3>
+                        <div class="font-status">AVAILABLE</div>
+                    </div>
+                    <div class="font-preview otique-font">
+                        The quick brown fox jumps over the lazy dog
+                    </div>
+                    <div class="entry-meta">
+                        <span>1 WEIGHT</span>
+                        <span>TEXT STYLE</span>
+                        <span>OTF FORMAT</span>
+                    </div>
+                </div>
+                <div class="entry-action">VIEW</div>
             </div>
-            
-            <div class="font-grid">
-                <!-- Otique Font Card -->
-                <div class="font-card" data-font="otique">
-                    <div class="font-card-header">
-                        <div class="font-name">Otique</div>
-                        <div class="font-status">available</div>
-                    </div>
-                    <div class="font-preview">
-                        <div class="font-display otique-font">
-                            The quick brown fox jumps over the lazy dog
-                        </div>
-                    </div>
-                    <div class="font-details">
-                        <div class="font-info">
-                            <span class="info-label">weights:</span>
-                            <span class="info-value">1</span>
-                        </div>
-                        <div class="font-info">
-                            <span class="info-label">styles:</span>
-                            <span class="info-value">text</span>
-                        </div>
-                        <button class="font-cta">view details</button>
-                    </div>
-                </div>
 
-                <!-- Sooper Font Card -->
-                <div class="font-card" data-font="sooper">
-                    <div class="font-card-header">
-                        <div class="font-name">Sooper</div>
-                        <div class="font-status">available</div>
+            <div class="font-entry" data-font="sooper">
+                <div class="entry-number">002</div>
+                <div class="entry-content">
+                    <div class="entry-header">
+                        <h3 class="font-name">SOOPER</h3>
+                        <div class="font-status">AVAILABLE</div>
                     </div>
-                    <div class="font-preview">
-                        <div class="font-display sooper-font">
-                            The quick brown fox jumps over the lazy dog
-                        </div>
+                    <div class="font-preview sooper-font">
+                        The quick brown fox jumps over the lazy dog
                     </div>
-                    <div class="font-details">
-                        <div class="font-info">
-                            <span class="info-label">weights:</span>
-                            <span class="info-value">1</span>
-                        </div>
-                        <div class="font-info">
-                            <span class="info-label">styles:</span>
-                            <span class="info-value">regular</span>
-                        </div>
-                        <button class="font-cta">view details</button>
+                    <div class="entry-meta">
+                        <span>1 WEIGHT</span>
+                        <span>REGULAR STYLE</span>
+                        <span>OTF FORMAT</span>
                     </div>
                 </div>
+                <div class="entry-action">VIEW</div>
+            </div>
 
-                <!-- Cheltender Font Card -->
-                <div class="font-card" data-font="cheltender">
-                    <div class="font-card-header">
-                        <div class="font-name">Cheltender</div>
-                        <div class="font-status">available</div>
+            <div class="font-entry" data-font="cheltender">
+                <div class="entry-number">003</div>
+                <div class="entry-content">
+                    <div class="entry-header">
+                        <h3 class="font-name">CHELTENDER</h3>
+                        <div class="font-status">AVAILABLE</div>
                     </div>
-                    <div class="font-preview">
-                        <div class="font-display cheltender-font">
-                            The quick brown fox jumps over the lazy dog
-                        </div>
+                    <div class="font-preview cheltender-font">
+                        The quick brown fox jumps over the lazy dog
                     </div>
-                    <div class="font-details">
-                        <div class="font-info">
-                            <span class="info-label">weights:</span>
-                            <span class="info-value">1</span>
-                        </div>
-                        <div class="font-info">
-                            <span class="info-label">styles:</span>
-                            <span class="info-value">regular</span>
-                        </div>
-                        <button class="font-cta">view details</button>
+                    <div class="entry-meta">
+                        <span>1 WEIGHT</span>
+                        <span>REGULAR STYLE</span>
+                        <span>OTF FORMAT</span>
                     </div>
                 </div>
+                <div class="entry-action">VIEW</div>
             </div>
         </div>
     </section>
 
-    <!-- Type Tester Section -->
+    <!-- Type Tester -->
     <section class="type-tester">
-        <div class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">test drive</h2>
-                <p class="section-subtitle">try our fonts with your own text</p>
+        <div class="tester-header">
+            <h2 class="section-title">TYPE TERMINAL</h2>
+            <div class="terminal-status">READY</div>
+        </div>
+        
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-controls">
+                    <span class="control-dot red"></span>
+                    <span class="control-dot yellow"></span>
+                    <span class="control-dot green"></span>
+                </div>
+                <div class="terminal-title">font-tester.exe</div>
             </div>
             
-            <div class="tester-interface">
-                <div class="tester-controls">
-                    <div class="control-group">
-                        <label class="control-label">font family</label>
-                        <select class="font-selector" id="fontSelector">
-                            <option value="otique">Otique</option>
-                            <option value="sooper">Sooper</option>
-                            <option value="cheltender">Cheltender</option>
+            <div class="terminal-content">
+                <div class="terminal-controls-panel">
+                    <div class="control-row">
+                        <label>FONT:</label>
+                        <select id="fontSelector" class="terminal-select">
+                            <option value="otique">OTIQUE</option>
+                            <option value="sooper">SOOPER</option>
+                            <option value="cheltender">CHELTENDER</option>
                         </select>
                     </div>
-                    <div class="control-group">
-                        <label class="control-label">size</label>
-                        <input type="range" class="size-slider" id="sizeSlider" min="24" max="120" value="72">
-                        <span class="size-value" id="sizeValue">72px</span>
+                    <div class="control-row">
+                        <label>SIZE:</label>
+                        <input type="range" id="sizeSlider" min="24" max="120" value="72" class="terminal-slider">
+                        <span id="sizeValue" class="size-display">72PX</span>
                     </div>
                 </div>
                 
-                <div class="tester-display">
-                    <div class="paper-background">
-                        <div class="editable-preview otique-font" contenteditable="true" id="previewText">
-                            Type something beautiful
+                <div class="terminal-output">
+                    <div class="output-line">$ font-preview --text="TYPE SOMETHING BRUTAL"</div>
+                    <div class="preview-area">
+                        <div id="previewText" class="preview-text otique-font" contenteditable="true">
+                            TYPE SOMETHING BRUTAL
                         </div>
                     </div>
                 </div>
@@ -201,38 +190,46 @@
 
     <!-- About Section -->
     <section id="about" class="about-section">
-        <div class="section-container">
+        <div class="about-grid">
             <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">about the foundry</h2>
-                    <p class="about-description">
-                        We believe typography is the voice of design. Each typeface we create 
-                        is meticulously crafted to serve both form and function, bridging the 
-                        gap between traditional craftsmanship and digital innovation.
-                    </p>
-                    <p class="about-description">
-                        Our fonts are designed for the modern world – optimized for screens, 
-                        readable at any size, and versatile enough for any project.
-                    </p>
+                <h2 class="section-title">FOUNDRY.INFO</h2>
+                <div class="info-blocks">
+                    <div class="info-block">
+                        <div class="block-header">MISSION</div>
+                        <div class="block-content">
+                            Creating typefaces that challenge conventions. 
+                            Each font is a statement, each character a rebellion 
+                            against the ordinary.
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <div class="block-header">PROCESS</div>
+                        <div class="block-content">
+                            From analog sketches to digital perfection. 
+                            We embrace both tradition and innovation 
+                            in our pursuit of typographic excellence.
+                        </div>
+                    </div>
                 </div>
-                <div class="about-visual">
-                    <div class="design-process">
-                        <div class="process-step">
-                            <div class="step-icon">✏️</div>
-                            <div class="step-title">sketch</div>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-icon">⚡</div>
-                            <div class="step-title">digitize</div>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-icon">🔧</div>
-                            <div class="step-title">refine</div>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-icon">🚀</div>
-                            <div class="step-title">release</div>
-                        </div>
+            </div>
+            
+            <div class="process-visual">
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-name">SKETCH</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-name">DIGITIZE</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-name">REFINE</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-name">RELEASE</div>
                     </div>
                 </div>
             </div>
@@ -241,56 +238,53 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
-        <div class="section-container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2 class="section-title">get in touch</h2>
-                    <p class="contact-description">
-                        Ready to elevate your project with premium typography? 
-                        Let's discuss licensing, custom work, or collaborations.
-                    </p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <span class="method-label">email:</span>
-                            <span class="method-value">hello@mikeyfoundry.com</span>
-                        </div>
-                        <div class="contact-method">
-                            <span class="method-label">licensing:</span>
-                            <span class="method-value">fonts@mikeyfoundry.com</span>
-                        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2 class="section-title">CONTACT.EXE</h2>
+                <div class="contact-data">
+                    <div class="data-row">
+                        <span class="data-label">EMAIL:</span>
+                        <span class="data-value">HELLO@MIKEYFOUNDRY.COM</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">LICENSING:</span>
+                        <span class="data-value">FONTS@MIKEYFOUNDRY.COM</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">STATUS:</span>
+                        <span class="data-value status-online">ONLINE</span>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form class="form">
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder="your name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-input" placeholder="your email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-textarea" placeholder="your message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="form-submit">send message</button>
-                    </form>
-                </div>
+            </div>
+            
+            <div class="contact-form">
+                <div class="form-header">MESSAGE COMPOSER</div>
+                <form class="brutal-form">
+                    <div class="form-field">
+                        <label>NAME:</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-field">
+                        <label>EMAIL:</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label>MESSAGE:</label>
+                        <textarea rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">SEND MESSAGE</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-brand">mikey.foundry</div>
-                <div class="footer-links">
-                    <a href="#" class="footer-link">terms</a>
-                    <a href="#" class="footer-link">privacy</a>
-                    <a href="#" class="footer-link">licenses</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Mikey Type Foundry. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-brand">MIKEY.FOUNDRY</div>
+            <div class="footer-info">
+                <span>© 2025 ALL RIGHTS RESERVED</span>
+                <span>TERMS • PRIVACY • LICENSES</span>
             </div>
         </div>
     </footer>
