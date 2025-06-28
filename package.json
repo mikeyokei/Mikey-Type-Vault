@@ -1,0 +1,22 @@
+{
+  "name": "mikey-type-foundry",
+  "version": "1.0.0",
+  "description": "Modern type foundry website showcasing premium typefaces",
+  "main": "index.html",
+  "scripts": {
+    "dev": "http-server . -p 3000 -o",
+    "start": "http-server . -p 3000",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "keywords": [
+    "typography",
+    "fonts",
+    "type-foundry",
+    "design"
+  ],
+  "author": "Mikey Type Foundry",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
